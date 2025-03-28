@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panelSelection = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -50,10 +51,12 @@
             this.txtBilan = new System.Windows.Forms.TextBox();
             this.cbxSecondMedicament = new System.Windows.Forms.ComboBox();
             this.cbxPremierMedicament = new System.Windows.Forms.ComboBox();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.panelSelection.SuspendLayout();
             this.panelSaisie.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEchantillons)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cptQuantite)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelSelection
@@ -307,6 +310,7 @@
             this.panelSaisie.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEchantillons)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cptQuantite)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -336,5 +340,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.BindingSource bindingSource1;
     }
 }

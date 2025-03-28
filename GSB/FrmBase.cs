@@ -79,7 +79,9 @@ namespace GSB {
 
         // consulter l'ensemble des visites réalisées
         private void consulterVisite_Click(object sender, EventArgs e) {
-         
+            FrmListeVisite unfrmListeVisite = new FrmListeVisite();
+            unfrmListeVisite.Show();
+            Close();
         }
 
         // consultation des médicaments
