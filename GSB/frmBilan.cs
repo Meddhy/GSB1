@@ -394,7 +394,7 @@ namespace GSB
                 msgSecondMedicament.Text = "Veuillez sélectionner un autre médicament.";
                 msgSecondMedicament.Visible = true;
                 ok = false;
-            }
+            }   
             return ok;
         }
 
