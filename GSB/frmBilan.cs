@@ -435,7 +435,9 @@ namespace GSB
 
         private void suppressionEchantillon(int ligne)
         {
-
+            // Ajouter un message de confirmation
+            if (MessageBox.Show("Voulez-vous vraiment supprimer cet échantillon ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                return;
                 // récupérer le médicament de la ligne passé en parametre
                 Medicament leMedicament = (Medicament)dgvEchantillons.Rows[ligne].Cells[0].Value;
                 // supprimer l'échantillon de l'objet visite

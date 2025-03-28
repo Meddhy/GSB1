@@ -31,7 +31,11 @@ namespace GSB
 
         private void dgvVisiteMaj_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            suppression(e);
+            if (e.ColumnIndex == 1)
+            {
+                suppression(e); 
+            }
+            
         }
 
 
@@ -321,28 +325,27 @@ namespace GSB
             // Demander confirmation de la suppression 
             // si oui, on supprime la visite de la liste des visites
             // on rafraichit le datagridview
-            if (e.ColumnIndex == 1)
-            {
-                if (MessageBox.Show("Voulez-vous vraiment supprimer ce rendez-vous ?", "Suppression", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    // récupérer l'id de la visite
-                    int id = laVisite.Id;
-                    Visite uneVisite = (Visite)dgvVisiteMaj.Rows[e.RowIndex].Cells[0].Value;
-                    string message;
-                    // Appel de la méthode de supprimerRendezVous
-                    bool ok = Passerelle.supprimerRendezVous(uneVisite.Id, out message);
-                    if (ok)
-                    {
-                        Globale.mesVisites.Remove(uneVisite);
-                        remplirdgvVisite();
-                    }
-                    else
-                    {
-                        MessageBox.Show(message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
 
+            if (MessageBox.Show("Voulez-vous vraiment supprimer ce rendez-vous ?", "Suppression", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                // récupérer l'id de la visite
+                int id = laVisite.Id;
+                Visite uneVisite = (Visite)dgvVisiteMaj.Rows[e.RowIndex].Cells[0].Value;
+                string message;
+                // Appel de la méthode de supprimerRendezVous
+                bool ok = Passerelle.supprimerRendezVous(uneVisite.Id, out message);
+                if (ok)
+                {
+                    Globale.mesVisites.Remove(uneVisite);
+                    remplirdgvVisite();
+                }
+                else
+                {
+                    MessageBox.Show(message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
+
+
         }
 
             #endregion
