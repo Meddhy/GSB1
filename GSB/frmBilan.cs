@@ -394,7 +394,7 @@ namespace GSB
                 msgSecondMedicament.Text = "Veuillez sélectionner un autre médicament.";
                 msgSecondMedicament.Visible = true;
                 ok = false;
-            }
+            }   
             return ok;
         }
 
@@ -436,15 +436,13 @@ namespace GSB
         private void suppressionEchantillon(int ligne)
         {
 
-            if (MessageBox.Show("Voulez-vous vraiment supprimer cet échantillon ?", "Suppression", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
-            {
                 // récupérer le médicament de la ligne passé en parametre
                 Medicament leMedicament = (Medicament)dgvEchantillons.Rows[ligne].Cells[0].Value;
                 // supprimer l'échantillon de l'objet visite
                 uneVisite.supprimerEchantillon(leMedicament);
                 // Supprimer la ligne du datagridview
                 dgvEchantillons.Rows.RemoveAt(ligne);
-            }
+            
 
         }
 
