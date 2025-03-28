@@ -96,6 +96,16 @@ namespace GSB
             cptQuantite.Maximum = 10;
             cptQuantite.Value = 1;
 
+            // Vider les messages d'erreur msgPremierMedicament, msgSecondMedicament, msgBilan
+            msgPremierMedicament.Text = "";
+            msgPremierMedicament.Visible = false;
+
+            msgSecondMedicament.Text = "";
+            msgSecondMedicament.Visible = false;
+
+            msgBilan.Text = "";
+            msgBilan.Visible = false;
+
             parametrerDgv(dgvEchantillons);
         }
 
@@ -429,7 +439,7 @@ namespace GSB
             }
             else
             {
-                MessageBox.Show("Bilan enregistré", "Bilan enregistré", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Votre bilan est maintenant enregistré", "Bilan enregistré", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -449,8 +459,7 @@ namespace GSB
         }
 
 
+
         #endregion
-
-
     }
 }

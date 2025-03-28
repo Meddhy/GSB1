@@ -344,8 +344,6 @@ namespace GSB
                     MessageBox.Show(message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-
-
         }
 
             #endregion
